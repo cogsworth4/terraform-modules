@@ -57,7 +57,7 @@ variable "s3_replicas" {
   }))
 }
 
-# The methods which are allowed to be used for direct browser uploads.
+# The headers which are allowed to be used for direct browser uploads.
 variable "cors_allowed_headers" {
   type    = list(string)
   default = ["*"]
@@ -66,7 +66,7 @@ variable "cors_allowed_headers" {
 # The methods which are allowed to be used for direct browser uploads.
 variable "cors_allowed_methods" {
   type    = list(string)
-  default = ["*"]
+  default = ["POST", "PUT"]
 }
 
 # The origins which are allowed to be used for direct browser uploads.
@@ -76,8 +76,7 @@ variable "cors_allowed_origins" {
   default = ["*"]
 }
 
-# The origins which are allowed to be used for direct browser uploads.
-# The default is all origins which is not recommended for production.
+# The headers to expose when making requests from the browser.
 variable "cors_expose_headers" {
   type    = list(string)
   default = ["ETag"]
