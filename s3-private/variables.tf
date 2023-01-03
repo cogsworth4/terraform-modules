@@ -56,3 +56,29 @@ variable "s3_replicas" {
     region     = string
   }))
 }
+
+# The methods which are allowed to be used for direct browser uploads.
+variable "cors_allowed_headers" {
+  type    = list(string)
+  default = ["*"]
+}
+
+# The methods which are allowed to be used for direct browser uploads.
+variable "cors_allowed_methods" {
+  type    = list(string)
+  default = ["*"]
+}
+
+# The origins which are allowed to be used for direct browser uploads.
+# The default is all origins which is not recommended for production.
+variable "cors_allowed_origins" {
+  type    = list(string)
+  default = ["*"]
+}
+
+# The origins which are allowed to be used for direct browser uploads.
+# The default is all origins which is not recommended for production.
+variable "cors_expose_headers" {
+  type    = list(string)
+  default = ["ETag"]
+}
