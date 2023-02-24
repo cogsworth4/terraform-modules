@@ -7,6 +7,12 @@ resource "aws_alb" "alb" {
   ]
   enable_http2 = "true"
   idle_timeout = 600
+
+  access_logs {
+    bucket  = var.enable_access_logs ? module.alb-access-logs-bucket[0].bucket_name : ""
+    enabled = var.enable_access_logs
+  }
+
   tags = {
     Name        = "${var.project}-${var.environment}"
     Project     = var.project

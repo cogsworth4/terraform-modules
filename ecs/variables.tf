@@ -98,6 +98,12 @@ variable "enable_xray" {
   description = "Grant Xray permission to ECS"
 }
 
+variable "enable_access_logs" {
+  type        = bool
+  default     = false
+  description = "Enable S3 access logs for the ALB"
+}
+
 ##########################################################################
 # AutoScaling Configuration
 ##########################################################################
