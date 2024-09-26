@@ -53,6 +53,13 @@ locals {
         "ecs:ListTasks"
       ],
       "Resource" : "*"
+    },
+    {
+      "Effect" : "Allow",
+      "Action" : [
+        "sns:Publish"
+      ],
+      "Resource" : "*"
     }
   ]
 
